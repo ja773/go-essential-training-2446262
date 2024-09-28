@@ -12,8 +12,22 @@ import (
 )
 
 func main() {
-	n := 42
-	s := fmt.Sprintf("%d", n)
+	// n := 42
+	// s := fmt.Sprintf("%d", n)
 
-	fmt.Printf("s = %q (type %T)\n", s, s)
+	// fmt.Printf("s = %q (type %T)\n", s, s)
+
+	count := 0
+	for a := 1000; a <= 9999; a++ {
+		for b := a; b <= 9999; b++ {
+			mult := a * b
+			s := fmt.Sprintf("%d", mult)
+
+			if s[0] == s[len(s)-1] {
+				count++
+			}
+		}
+	}
+
+	fmt.Println(count)
 }
