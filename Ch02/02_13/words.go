@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -13,4 +14,16 @@ func main() {
 	`
 
 	fmt.Println(text)
+
+	text = strings.ToLower(text)
+
+	count := map[string]int{}
+
+	words := strings.Fields(text)
+
+	for _, word := range words {
+		count[word]++
+	}
+
+	fmt.Println(count)
 }
